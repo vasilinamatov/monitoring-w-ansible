@@ -1,0 +1,24 @@
+---
+#
+# file: tests/monitoring_install.yml
+#
+
+- hosts: localhost
+  connection: local
+  become: True
+  roles:
+    - monitoring
+  vars:
+    components:
+      - prometheus
+      - node_exporter
+      - grafana
+
+- hosts: localhost
+  connection: local
+  become: True
+  roles:
+    - monitoring
+  vars:
+    components:
+      - node_exporter

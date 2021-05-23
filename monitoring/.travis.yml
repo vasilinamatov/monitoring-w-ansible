@@ -1,0 +1,16 @@
+---
+sudo: required
+
+env:
+  - distro: debian9
+  - distro: ubuntu16
+
+services:
+  - docker
+
+script:
+  - chmod +x ${PWD}/tests/runtests.sh
+  - ${PWD}/tests/runtests.sh
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
